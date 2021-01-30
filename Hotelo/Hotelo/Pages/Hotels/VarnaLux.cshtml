@@ -3,7 +3,7 @@
 @{
     ViewData["Title"] = "Hotels";
 }
-<h1>Хотели наблизо</h1>
+    <h1>Луксозни хотели във Варна</h1>
 
 <form method="get">
     <div class="form-group">
@@ -20,9 +20,9 @@
 
 @foreach (var Hotel in Model.Hotels)
 {
-    if (Hotel.Name != "Luxor" && Hotel.Name != "Planet")
+    if (Hotel.Name == "Luxor" || Hotel.Name == "Planet")
     {
-        <partial name="_Summary" model="Hotel" />
+        <partial name="_Summary" model="Hotel"/>
     }
 }
 
