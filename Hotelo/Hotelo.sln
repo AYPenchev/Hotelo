@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30320.27
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hotelo", "Hotelo\Hotelo.csproj", "{3E379F42-2E7F-4F9A-8FA6-2EF4DED5DAEE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hotelo.Core", "Hotelo.Core\Hotelo.Core.csproj", "{B262FFCA-786B-4842-9081-A3EB4820C475}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hotelo.Data", "Hotelo.Data\Hotelo.Data.csproj", "{5531907B-BEDA-46B2-AFB8-2C85DCF3B8F5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3E379F42-2E7F-4F9A-8FA6-2EF4DED5DAEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E379F42-2E7F-4F9A-8FA6-2EF4DED5DAEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E379F42-2E7F-4F9A-8FA6-2EF4DED5DAEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E379F42-2E7F-4F9A-8FA6-2EF4DED5DAEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B262FFCA-786B-4842-9081-A3EB4820C475}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B262FFCA-786B-4842-9081-A3EB4820C475}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B262FFCA-786B-4842-9081-A3EB4820C475}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B262FFCA-786B-4842-9081-A3EB4820C475}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5531907B-BEDA-46B2-AFB8-2C85DCF3B8F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5531907B-BEDA-46B2-AFB8-2C85DCF3B8F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5531907B-BEDA-46B2-AFB8-2C85DCF3B8F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5531907B-BEDA-46B2-AFB8-2C85DCF3B8F5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {69E4C3CE-AD60-4FE8-889F-3AD381F79205}
+	EndGlobalSection
+EndGlobal
