@@ -2,7 +2,7 @@
 
 namespace Hotelo.Core
 {
-    public class Restaurant
+    public class Hotel
     {
         public int Id { get; set; }
 

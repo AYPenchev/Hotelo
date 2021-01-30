@@ -10,56 +10,56 @@ namespace Hotelo.Api
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class RestaurantsController : ControllerBase
+    public class HotelsController : ControllerBase
     {
         private readonly HoteloDbContext _context;
 
-        public RestaurantsController(HoteloDbContext context)
+        public HotelsController(HoteloDbContext context)
         {
             _context = context;
         }
 
-        // GET: api/Restaurants
+        // GET: api/Hotels
         [HttpGet]
-        public IEnumerable<Restaurant> GetRestaurants()
+        public IEnumerable<Hotel> GetHotels()
         {
-            return _context.Restaurants;
+            return _context.Hotels;
         }
 
-        // GET: api/Restaurants/5
+        // GET: api/Hotels/5
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetRestaurant([FromRoute] int id)
+        public async Task<IActionResult> GetHotel([FromRoute] int id)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var restaurant = await _context.Restaurants.FindAsync(id);
+            var Hotel = await _context.Hotels.FindAsync(id);
 
-            if (restaurant == null)
+            if (Hotel == null)
             {
                 return NotFound();
             }
 
-            return Ok(restaurant);
+            return Ok(Hotel);
         }
 
-        // PUT: api/Restaurants/5
+        // PUT: api/Hotels/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutRestaurant([FromRoute] int id, [FromBody] Restaurant restaurant)
+        public async Task<IActionResult> PutHotel([FromRoute] int id, [FromBody] Hotel Hotel)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != restaurant.Id)
+            if (id != Hotel.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(restaurant).State = EntityState.Modified;
+            _context.Entry(Hotel).State = EntityState.Modified;
 
             try
             {
@@ -67,7 +67,7 @@ namespace Hotelo.Api
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!RestaurantExists(id))
+                if (!HotelExists(id))
                 {
                     return NotFound();
                 }
@@ -80,45 +80,45 @@ namespace Hotelo.Api
             return NoContent();
         }
 
-        // POST: api/Restaurants
+        // POST: api/Hotels
         [HttpPost]
-        public async Task<IActionResult> PostRestaurant([FromBody] Restaurant restaurant)
+        public async Task<IActionResult> PostHotel([FromBody] Hotel Hotel)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            _context.Restaurants.Add(restaurant);
+            _context.Hotels.Add(Hotel);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetRestaurant", new { id = restaurant.Id }, restaurant);
+            return CreatedAtAction("GetHotel", new { id = Hotel.Id }, Hotel);
         }
 
-        // DELETE: api/Restaurants/5
+        // DELETE: api/Hotels/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteRestaurant([FromRoute] int id)
+        public async Task<IActionResult> DeleteHotel([FromRoute] int id)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var restaurant = await _context.Restaurants.FindAsync(id);
-            if (restaurant == null)
+            var Hotel = await _context.Hotels.FindAsync(id);
+            if (Hotel == null)
             {
                 return NotFound();
             }
 
-            _context.Restaurants.Remove(restaurant);
+            _context.Hotels.Remove(Hotel);
             await _context.SaveChangesAsync();
 
-            return Ok(restaurant);
+            return Ok(Hotel);
         }
 
-        private bool RestaurantExists(int id)
+        private bool HotelExists(int id)
         {
-            return _context.Restaurants.Any(e => e.Id == id);
+            return _context.Hotels.Any(e => e.Id == id);
         }
     }
 }

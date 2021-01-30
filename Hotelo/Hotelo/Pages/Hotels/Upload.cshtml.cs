@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Hotelo.Pages.Restaurants
+namespace Hotelo.Pages.Hotels
 {
     public class UploadModel : PageModel
     {
@@ -26,7 +26,7 @@ namespace Hotelo.Pages.Restaurants
             XmlReaderSettings settings = new XmlReaderSettings();
             settings.IgnoreWhitespace = true;
 
-            using (var fileStream = System.IO.File.OpenText("restaurant.xml"))
+            using (var fileStream = System.IO.File.OpenText("Hotel.xml"))
             using (XmlReader reader = XmlReader.Create(fileStream, settings))
             {
                 while (reader.Read())

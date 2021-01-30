@@ -1,12 +1,12 @@
 ﻿@page
-@model Hotelo.Pages.Restaurants.ClientRestaurantsModel
+@model Hotelo.Pages.Hotels.ClientHotelsModel
 @{
-    ViewData["Title"] = "ClientRestaurants";
+    ViewData["Title"] = "ClientHotels";
 }
 
-<h2>ClientRestaurants</h2>
+<h2>ClientHotels</h2>
 
-<table class="table" id="restaurants">
+<table class="table" id="Hotels">
 
 </table>
 
@@ -26,9 +26,9 @@
         $(function() {
             var cuisines = ["Unknown", "Mexican", "Italian", "Indian"];
 
-            $.ajax("/api/restaurants/", { method: "get" })
+            $.ajax("/api/Hotels/", { method: "get" })
                 .then(function(response) {
-                    $("#restaurants").dataTable({
+                    $("#Hotels").dataTable({
                         data: response,
                         columns: [
                             { "data": "name" },

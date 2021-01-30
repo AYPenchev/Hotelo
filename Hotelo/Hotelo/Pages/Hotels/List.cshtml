@@ -1,9 +1,9 @@
 ﻿@page
-@model Restaurants.ListModel
+@model Hotels.ListModel
 @{
-    ViewData["Title"] = "Restaurants";
+    ViewData["Title"] = "Hotels";
 }
-<h1>Restaurants</h1>
+<h1>Hotels</h1>
 
 <form method="get">
     <div class="form-group">
@@ -18,9 +18,9 @@
     </div>
 </form>
 
-@foreach (var restaurant in Model.Restaurants)
+@foreach (var Hotel in Model.Hotels)
 {
-    <partial name="_Summary" model="restaurant" />
+    <partial name="_Summary" model="Hotel" />
 }
 
 <a class="btn btn-lg"

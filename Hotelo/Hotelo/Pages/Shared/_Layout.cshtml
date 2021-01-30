@@ -31,7 +31,7 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a asp-page="/Index">Начална страница</a></li>
-                    <li><a asp-page="/Restaurants/List">Избери хотел</a></li>
+                    <li><a asp-page="/Hotels/List">Избери хотел</a></li>
                     <li><a asp-page="/About">За нас</a></li>
                     <li><a asp-page="/Contact">Контакти</a></li>
                 </ul>
@@ -45,7 +45,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <vc:restaurant-count></vc:restaurant-count>
+            <vc:Hotel-count></vc:Hotel-count>
             @RenderSection("footer", required: false)
             <p>&copy; 2020 - Hotelo Bulgaria - Asen Penchev</p>
             <img src="/hotel.png" />

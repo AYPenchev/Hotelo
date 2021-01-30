@@ -6,30 +6,30 @@ using Microsoft.Extensions.Logging;
 using Hotelo.Core;
 using Hotelo.Data;
 
-namespace Hotelo.Pages.Restaurants
+namespace Hotelo.Pages.Hotels
 {
     public class ListModel : PageModel
     {
         private readonly IConfiguration _config;
-        private readonly IRestaurantData _restaurantData;
+        private readonly IHotelData _HotelData;
         private readonly ILogger<ListModel> _logger;
 
         public string Message { get; set; }
-        public  IEnumerable<Restaurant> Restaurants { get; set; }
+        public  IEnumerable<Hotel> Hotels { get; set; }
         [BindProperty(SupportsGet = true)]
         public string SearchTerm { get; set; }
 
-        public ListModel(IConfiguration config, IRestaurantData restaurantData, ILogger<ListModel> logger)
+        public ListModel(IConfiguration config, IHotelData HotelData, ILogger<ListModel> logger)
         {
             this._config= config;
-            this._restaurantData = restaurantData;
+            this._HotelData = HotelData;
             this._logger = logger;
         }
         
         public void OnGet()
         {
             Message = this._config["Message"];
-            Restaurants = this._restaurantData.GetRestaurantsByName(SearchTerm);
+            Hotels = this._HotelData.GetHotelsByName(SearchTerm);
         }
     }
 }

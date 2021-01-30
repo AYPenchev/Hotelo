@@ -9,6 +9,6 @@ namespace Hotelo.Data
         {
             
         }
-        public DbSet<Restaurant> Restaurants { get; set; }
+        public DbSet<Hotel> Hotels { get; set; }
     }
 }

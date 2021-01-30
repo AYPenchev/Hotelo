@@ -5,36 +5,36 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Hotelo.Core;
 using Hotelo.Data;
 
-namespace Hotelo.Pages.Restaurants
+namespace Hotelo.Pages.Hotels
 {
     public class EditModel : PageModel
     {
-        private readonly IRestaurantData _restaurantData;
+        private readonly IHotelData _HotelData;
         private readonly IHtmlHelper _htmlHelper;
 
         [BindProperty]
-        public Restaurant Restaurant { get; set; }
+        public Hotel Hotel { get; set; }
         public IEnumerable<SelectListItem> Cuisines { get; set; }
 
-        public EditModel(IRestaurantData restaurantData, IHtmlHelper htmlHelper)
+        public EditModel(IHotelData HotelData, IHtmlHelper htmlHelper)
         {
-            this._restaurantData = restaurantData;
+            this._HotelData = HotelData;
             this._htmlHelper = htmlHelper;
         }
-        public IActionResult OnGet(int? restaurantId)
+        public IActionResult OnGet(int? HotelId)
         {
             Cuisines = this._htmlHelper.GetEnumSelectList<CuisineType>();
 
-            if (restaurantId.HasValue)
+            if (HotelId.HasValue)
             {
-                Restaurant = this._restaurantData.GetById(restaurantId.Value);
+                Hotel = this._HotelData.GetById(HotelId.Value);
             }
             else
             {
-                Restaurant = new Restaurant();
+                Hotel = new Hotel();
             }
 
-            if (Restaurant == null)
+            if (Hotel == null)
             {
                 return RedirectToPage("./NotFound");
             }
@@ -50,17 +50,17 @@ namespace Hotelo.Pages.Restaurants
                 return Page();
             }
 
-            if (Restaurant.Id > 0)
+            if (Hotel.Id > 0)
             {
-                this._restaurantData.Update(Restaurant);
+                this._HotelData.Update(Hotel);
             }
             else
             {
-                this._restaurantData.Add(Restaurant);
+                this._HotelData.Add(Hotel);
             }
-            this._restaurantData.Commit();
-            TempData["Message"] = "Restaurant saved!";
-            return RedirectToPage("./Detail", new { restaurantId = Restaurant.Id });
+            this._HotelData.Commit();
+            TempData["Message"] = "Hotel saved!";
+            return RedirectToPage("./Detail", new { HotelId = Hotel.Id });
         }
     }
 }

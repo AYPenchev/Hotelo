@@ -31,7 +31,7 @@ namespace Hotelo
                     options.UseSqlServer(Configuration.GetConnectionString("HoteloDb"));
                 });
 
-            services.AddScoped<IRestaurantData, SqlRestaurantData>();
+            services.AddScoped<IHotelData, SqlHotelData>();
 
             services.Configure<CookiePolicyOptions>(options =>
             {

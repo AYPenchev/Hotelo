@@ -1,5 +1,5 @@
 ﻿@using Core
-@model Restaurant
+@model Hotel
 
 <div class="panel panel-default">
     <div class="panel-heading">
@@ -12,22 +12,22 @@
     <div class="panel-footer">
         <a class="btn btn-lg"
            asp-page="./Detail"
-           asp-route-restaurantId="@Model.Id">
+           asp-route-HotelId="@Model.Id">
             <i class="glyphicon glyphicon-zoom-in"></i>
         </a>
         <a class="btn btn-lg"
            asp-page="./Edit"
-           asp-route-restaurantId="@Model.Id">
+           asp-route-HotelId="@Model.Id">
             <i class="glyphicon glyphicon-edit"></i>
         </a>
         <a class="btn btn-lg"
            asp-page="./Delete"
-           asp-route-restaurantId="@Model.Id">
+           asp-route-HotelId="@Model.Id">
             <i class="glyphicon glyphicon-trash"></i>
         </a>
         <a class="btn btn-lg"
            asp-page="./Download"
-           asp-route-restaurantId="@Model.Id">
+           asp-route-HotelId="@Model.Id">
             <i class="glyphicon glyphicon-download"></i>
         </a>
     </div>

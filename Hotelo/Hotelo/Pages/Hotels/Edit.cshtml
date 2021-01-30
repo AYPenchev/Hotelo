@@ -1,0 +1,32 @@
+﻿@page "{HotelId:int?}"
+@model Hotelo.Pages.Hotels.EditModel
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Creating @Model.Hotel.Name</h2>
+
+<form method="post">
+    <input type="hidden" asp-for="Hotel.Id"/>
+    <div class="form-group">
+        <label asp-for="Hotel.Name"></label>
+        <input asp-for="Hotel.Name" class="form-control"/>
+        <span class="text-danger" asp-validation-for="Hotel.Name"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Hotel.Location"></label>
+        <input asp-for="Hotel.Location" class="form-control"/>
+        <span class="text-danger" asp-validation-for="Hotel.Location"></span>
+
+    </div>
+    <div class="form-group">
+        <label asp-for="Hotel.Cuisine"></label>
+        <select class="form-control" asp-for="Hotel.Cuisine" asp-items="Model.Cuisines"></select>
+        <span class="text-danger" asp-validation-for="Hotel.Cuisine"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

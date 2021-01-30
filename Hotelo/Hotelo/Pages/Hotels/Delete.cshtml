@@ -1,12 +1,12 @@
-﻿@page "{restaurantId:int}"
-@model Hotelo.Pages.Restaurants.DeleteModel
+﻿@page "{HotelId:int}"
+@model Hotelo.Pages.Hotels.DeleteModel
 @{
     ViewData["Title"] = "Delete";
 }
 
 <h2>Delete!</h2>
 <div class="alert alert-danger">
-    Are you sure you want to delete @Model.Restaurant.Name?
+    Are you sure you want to delete @Model.Hotel.Name?
 </div>
 <form method="post">
     <button type="submit" class="btn btn-danger">Yes!</button>
